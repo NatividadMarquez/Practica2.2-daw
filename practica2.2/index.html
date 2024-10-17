@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Practica2.2 - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Welcome to MkDocs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Practica2.2</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#natividad-marquez-baena" class="nav-link">Natividad Márquez Baena</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#practica-22-autenticacion-en-nginx" class="nav-link">Práctica 2.2 – Autenticación en Nginx</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#introduccion" class="nav-link">Introducción</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#paquetes-basicos" class="nav-link">Paquetes básicos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#creacion-de-usuarios-y-contrasenas-para-el-acceso-web" class="nav-link">Creacion de usuarios y contraseñas para el acceso web</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configurando-el-servidor-nginx-para-usar-autenticacion-basica" class="nav-link">Configurando el servidor Nginx para usar autenticación básica</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#probando-la-nueva-configuracion" class="nav-link">Probando la nueva configuración</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#combinacion-de-la-autenticacion-basica-con-la-restriccion-de-acceso-por-ip" class="nav-link">Combinación de la autenticación básica con la restricción de acceso por IP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="natividad-marquez-baena">Natividad Márquez Baena</h2>
+<h1 id="practica-22-autenticacion-en-nginx">Práctica 2.2 – Autenticación en Nginx</h1>
+<p>1.<a href="#1">Introducción</a>
+2.<a href="#2">Paquetes necesarios</a>
+3.<a href="#3">Creación de usuarios y contraseñas para el acceso web</a>
+4.<a href="#4">Configurando el servidor Nginx para usar autenticación básica</a>
+5.<a href="#5">Probando la nueva configuración</a>
+6.<a href="#6">Combinación de la autenticación básica con la restricción de acceso por IP</a></p>
+<div id="1"></div>
+
+<h2 id="introduccion">Introducción</h2>
+<p>En esta práctica se trabajará la autentificación básica HTTP para la gestión de acceso a un sitio web. Es una forma básica de autentificación para las aplicaciones web.</p>
+<p>La autentificación básica permite que un servidor solicite credenciales, como usuario y contraseña, para acceder a la página y protegerla del acceso no autorizado. Al ser un tipo muy simple de autentificación, puede llegar a presentar problemas de seguridad.</p>
+<div id="2"></div>
+<h2 id="paquetes-basicos">Paquetes básicos</h2>
+<p>Antes de realizar la práctica se requieren una serie de requisitos, como tener previamente instalado y configurado un servidor Debian remoto que funcione correctamente, con un dominio creado, ya que nos basaremos en el para la autentificacion básica.</p>
+<p>Además se debe de contar con herramientas previamente instaladas como openssl, para crear contraseñas. Se obtiene mediante el comando <code>dpkg -l |grep openssl</code>.</p>
+<p><img alt="img" src="../imagenes/1.png" /></p>
+<div id="3"></div>
+<h2 id="creacion-de-usuarios-y-contrasenas-para-el-acceso-web">Creacion de usuarios y contraseñas para el acceso web</h2>
+<p>Se creará un archivo oculto llamado <code>.htpasswd</code> dentro del directorio /etc/nginx, donde se guardarán los usuarios y contraseñas que se crearán a continuación.</p>
+<p>Primero se crea el usuario con un nombre y una contraseña.</p>
+<p><img alt="img" src="../imagenes/2.png" /></p>
+<p>También se creará otro usuario con el apellido.</p>
+<p><img alt="img" src="../imagenes/3.png" /></p>
+<p>A continuación se comprueba si el usuario y contraseña creados aparecen cifrados:</p>
+<p><img alt="img" src="../imagenes/4.png" /></p>
+<div id="4"></div>
+
+<h2 id="configurando-el-servidor-nginx-para-usar-autenticacion-basica">Configurando el servidor Nginx para usar autenticación básica</h2>
+<p>Para la configuración del servidor se editará el bloque server block al cual queremos aplicar la restricción de acceso o autentificación.
+Para ello se va a emplear el dominio previamente creado en la anterior práctica, <code>http://mi-dominio.com</code>.</p>
+<p>Para ello abrimos el server block con el comando nano y lo editamos:</p>
+<p><img alt="img" src="../imagenes/5.png" />
+<img alt="img" src="../imagenes/6.png" /></p>
+<p>Se puede aplicar las restricciones a nivel de servidor o nivel local, siendo este en directorios especificos. Se empleará la directiva <code>auth_basic</code> a nivel de location y se añadirá el nombre del dominio donde se solicitarán las credenciales.</p>
+<p>Por último se reinicia el sistema para que el servicio acepte los cambios y se integren.</p>
+<p><img alt="img" src="../imagenes/7.png" /></p>
+<div id="5"></div>
+
+<h2 id="probando-la-nueva-configuracion">Probando la nueva configuración</h2>
+<p>Una vez completados los pasos anteriores se comprueba si ,efectivamente, cuando se trata de acceder a la aplicación web desde la máquina anfitriona, se requieren unas credenciales de usuario y contraseña para la autentificación.</p>
+<p><img alt="img" src="../imagenes/8.png" />
+<img alt="img" src="../imagenes/10.png" /></p>
+<p>De esta manera al introducirla se debería poder acceder. Si se niega la autentificación, saltará el siguiente mensaje de error.</p>
+<p><img alt="img" src="../imagenes/9.png" /></p>
+<p>Existe la posibilidad de acceder a los registros de acceso <code>(access.log)</code> y error a la aplicación <code>(error.log)</code>.</p>
+<p><img alt="img" src="../imagenes/11.png" />
+<img alt="img" src="../imagenes/12.png" /></p>
+<p>Tambien es posible aplicar la autentificación a una sección de la web, por ejemplo, la del portfolio. Para ello se modifica el bloque server block, correspondiente al archivo <code>contact.html</code>, de tal manera que:</p>
+<p><img alt="img" src="../imagenes/13.png" />
+<img alt="img" src="../imagenes/14.png" /></p>
+<p>Posteriormente se hace una comprobación para ver si la sintaxis es correcta:</p>
+<p><img alt="img" src="../imagenes/15.png" /></p>
+<p>Se debe obtener este mensaje antes de continuar.</p>
+<div id="6"></div>
+
+<h2 id="combinacion-de-la-autenticacion-basica-con-la-restriccion-de-acceso-por-ip">Combinación de la autenticación básica con la restricción de acceso por IP</h2>
+<p>Es posible combiar la autentificación básica con la restricción de acceso a una dirección IP, de forma efectiva, resultando un incremento de la seguridad la combinación de ambas.</p>
+<p>Previamente se consulta la dirección IP desde donde se va a tratar de acceder. Después se abrirá el server block y se editará de tal forma que:</p>
+<p><img alt="img" src="../imagenes/18.png" /></p>
+<p>En la imagen, el apartado de <code>location</code> ha sido modificado haciendo el uso de <code>deny</code>.  Añadiendo la propia IP se le deniega la posibilidad de acceder, obteniendo el siguiente resultado:</p>
+<p><img alt="img" src="../imagenes/19.png" /></p>
+<p>Si accedemos al <code>error.log</code>, obtenemos este error, observando que efectivamente, se ha prohibido el acceso a la IP de la máquina anfitriona.</p>
+<p><img alt="img" src="../imagenes/20.png" /></p>
+<p>También es posible el caso contrario, donde la única IP permitida es la nuestra. Mediante el uso de allow se indica que nuestra IP tiene permiso para el acceso.</p>
+<p><img alt="img" src="../imagenes/21.png" />
+<img alt="img" src="../imagenes/22.png" /></p>
+<p>De esta manera se podrían combinar la autentificación HTTP junto con la restricción IP.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
